@@ -38,10 +38,10 @@
 #include "../Resources.h"
 #include "Common.h"
 
-constinit DefSymbol gTrailFlagDefSymbols[] = {
+constinit const DefSymbol gTrailFlagDefSymbols[] = {
     { .mSymbolValue = 0, .mSymbolName = "Loops" },                 { .mSymbolValue = -1, .mSymbolName = nullptr }
 };
-constinit DefField gTrailDefFields[] = {
+constinit const DefField gTrailDefFields[] = {
     { .mFieldName = "Image", .mFieldOffset = offsetof(TrailDefinition, mImage), .mFieldType = DefFieldType::DT_IMAGE, .mExtraData = nullptr },
     { .mFieldName = "MaxPoints", .mFieldOffset = offsetof(TrailDefinition, mMaxPoints), .mFieldType = DefFieldType::DT_INT, .mExtraData = nullptr },
     { .mFieldName = "MinPointDistance", .mFieldOffset = offsetof(TrailDefinition, mMinPointDistance), .mFieldType = DefFieldType::DT_FLOAT, .mExtraData = nullptr },
@@ -53,32 +53,32 @@ constinit DefField gTrailDefFields[] = {
     { .mFieldName = "TrailDuration", .mFieldOffset = offsetof(TrailDefinition, mTrailDuration), .mFieldType = DefFieldType::DT_TRACK_FLOAT, .mExtraData = nullptr },
     { .mFieldName = "", .mFieldOffset = 0x0, .mFieldType = DefFieldType::DT_INVALID, .mExtraData = nullptr }
 };
-constinit DefMap gTrailDefMap = { .mMapFields = gTrailDefFields, .mDefSize = sizeof(TrailDefinition), .mConstructorFunc = TrailDefinitionConstructor };
+constinit const DefMap gTrailDefMap = { .mMapFields = gTrailDefFields, .mDefSize = sizeof(TrailDefinition), .mConstructorFunc = TrailDefinitionConstructor };
 
-constinit DefSymbol gParticleFlagSymbols[] = {
+constinit const DefSymbol gParticleFlagSymbols[] = {
     { .mSymbolValue = 0, .mSymbolName = "RandomLaunchSpin" },     { .mSymbolValue = 1, .mSymbolName = "AlignLaunchSpin" },  { .mSymbolValue = 2, .mSymbolName = "AlignToPixel" },     { .mSymbolValue = 4, .mSymbolName = "ParticleLoops" },    { .mSymbolValue = 3, .mSymbolName = "SystemLoops" },
     { .mSymbolValue = 5, .mSymbolName = "ParticlesDontFollow" },  { .mSymbolValue = 6, .mSymbolName = "RandomStartTime" },  { .mSymbolValue = 7, .mSymbolName = "DieIfOverloaded" },  { .mSymbolValue = 8, .mSymbolName = "Additive" },         { .mSymbolValue = 9, .mSymbolName = "FullScreen" },
     { .mSymbolValue = 10, .mSymbolName = "SoftwareOnly" },         { .mSymbolValue = 11, .mSymbolName = "HardwareOnly" },     { .mSymbolValue = -1, .mSymbolName = nullptr }
 };
-constinit DefSymbol gEmitterTypeSymbols[] = {
+constinit const DefSymbol gEmitterTypeSymbols[] = {
     { .mSymbolValue = 0, .mSymbolName = "Circle" },               { .mSymbolValue = 1, .mSymbolName = "Box" },              { .mSymbolValue = 2, .mSymbolName = "BoxPath" },          { .mSymbolValue = 3, .mSymbolName = "CirclePath" },       { .mSymbolValue = 4, .mSymbolName = "CircleEvenSpacing" },
     { .mSymbolValue = -1, .mSymbolName = nullptr }
 };
-constinit DefSymbol gParticleTypeSymbols[] = {
+constinit const DefSymbol gParticleTypeSymbols[] = {
     { .mSymbolValue = 1, .mSymbolName = "Friction" },             { .mSymbolValue = 2, .mSymbolName = "Acceleration" },     { .mSymbolValue = 3, .mSymbolName = "Attractor" },        { .mSymbolValue = 4, .mSymbolName = "MaxVelocity" },      { .mSymbolValue = 5, .mSymbolName = "Velocity" },
     { .mSymbolValue = 6, .mSymbolName = "Position" },             { .mSymbolValue = 7, .mSymbolName = "SystemPosition" },   { .mSymbolValue = 8, .mSymbolName = "GroundConstraint" }, { .mSymbolValue = 9, .mSymbolName = "Shake" },            { .mSymbolValue = 10, .mSymbolName = "Circle" },
     { .mSymbolValue = 11, .mSymbolName = "Away" },                 { .mSymbolValue = -1, .mSymbolName = nullptr }
 };
 
-constinit DefField gParticleFieldDefFields[] = {
+constinit const DefField gParticleFieldDefFields[] = {
     { .mFieldName = "FieldType", .mFieldOffset = offsetof(ParticleField, mFieldType), .mFieldType = DefFieldType::DT_ENUM, .mExtraData = gParticleTypeSymbols },
     { .mFieldName = "x", .mFieldOffset = offsetof(ParticleField, mX), .mFieldType = DefFieldType::DT_TRACK_FLOAT, .mExtraData = nullptr },
     { .mFieldName = "y", .mFieldOffset = offsetof(ParticleField, mY), .mFieldType = DefFieldType::DT_TRACK_FLOAT, .mExtraData = nullptr },
     { .mFieldName = "", .mFieldOffset = 0x0, .mFieldType = DefFieldType::DT_INVALID, .mExtraData = nullptr },
 };
-constinit DefMap gParticleFieldDefMap = { .mMapFields = gParticleFieldDefFields, .mDefSize = sizeof(ParticleField), .mConstructorFunc = ParticleFieldConstructor };
+constinit const DefMap gParticleFieldDefMap = { .mMapFields = gParticleFieldDefFields, .mDefSize = sizeof(ParticleField), .mConstructorFunc = ParticleFieldConstructor };
 
-constinit DefField gEmitterDefFields[] = {
+constinit const DefField gEmitterDefFields[] = {
     { .mFieldName = "Image", .mFieldOffset = offsetof(TodEmitterDefinition,mImage), .mFieldType = DefFieldType::DT_IMAGE, .mExtraData = nullptr },
     { .mFieldName = "ImageRow", .mFieldOffset = offsetof(TodEmitterDefinition,mImageRow), .mFieldType = DefFieldType::DT_INT, .mExtraData = nullptr },
     { .mFieldName = "ImageCol", .mFieldOffset = offsetof(TodEmitterDefinition,mImageCol), .mFieldType = DefFieldType::DT_INT, .mExtraData = nullptr },
@@ -130,15 +130,15 @@ constinit DefField gEmitterDefFields[] = {
     { .mFieldName = "AnimationRate", .mFieldOffset = offsetof(TodEmitterDefinition,mAnimationRate), .mFieldType = DefFieldType::DT_TRACK_FLOAT, .mExtraData = nullptr },
     { .mFieldName = "", .mFieldOffset = 0x0, .mFieldType = DefFieldType::DT_INVALID, .mExtraData = nullptr },
 };
-constinit DefMap gEmitterDefMap = { .mMapFields = gEmitterDefFields, .mDefSize = sizeof(TodEmitterDefinition), .mConstructorFunc = TodEmitterDefinitionConstructor };
+constinit const DefMap gEmitterDefMap = { .mMapFields = gEmitterDefFields, .mDefSize = sizeof(TodEmitterDefinition), .mConstructorFunc = TodEmitterDefinitionConstructor };
 
-constinit DefField gParticleDefFields[] = {
+constinit const DefField gParticleDefFields[] = {
     { .mFieldName = "Emitter", .mFieldOffset = offsetof(TodParticleDefinition,mEmitterDefs), .mFieldType = DefFieldType::DT_ARRAY, .mExtraData = &gEmitterDefMap },
     { .mFieldName = "", .mFieldOffset = 0x0, .mFieldType = DefFieldType::DT_INVALID, .mExtraData = nullptr }
 };
-constinit DefMap gParticleDefMap = { .mMapFields = gParticleDefFields, .mDefSize = sizeof(TodParticleDefinition), .mConstructorFunc = TodParticleDefinitionConstructor };
+constinit const DefMap gParticleDefMap = { .mMapFields = gParticleDefFields, .mDefSize = sizeof(TodParticleDefinition), .mConstructorFunc = TodParticleDefinitionConstructor };
 
-constinit DefField gReanimatorTransformDefFields[] = {
+constinit const DefField gReanimatorTransformDefFields[] = {
     { .mFieldName = "x", .mFieldOffset = offsetof(ReanimatorTransform,mTransX), .mFieldType = DefFieldType::DT_FLOAT, .mExtraData = nullptr },
     { .mFieldName = "y", .mFieldOffset = offsetof(ReanimatorTransform,mTransY), .mFieldType = DefFieldType::DT_FLOAT, .mExtraData = nullptr },
     { .mFieldName = "kx", .mFieldOffset = offsetof(ReanimatorTransform,mSkewX), .mFieldType = DefFieldType::DT_FLOAT, .mExtraData = nullptr },
@@ -152,23 +152,23 @@ constinit DefField gReanimatorTransformDefFields[] = {
     { .mFieldName = "text", .mFieldOffset = offsetof(ReanimatorTransform,mText), .mFieldType = DefFieldType::DT_STRING, .mExtraData = nullptr },
     { .mFieldName = "", .mFieldOffset = 0, .mFieldType = DefFieldType::DT_INVALID, .mExtraData = nullptr }
 };
-constinit DefMap gReanimatorTransformDefMap = { .mMapFields = gReanimatorTransformDefFields, .mDefSize = sizeof(ReanimatorTransform), .mConstructorFunc = ReanimatorTransformConstructor };
+constinit const DefMap gReanimatorTransformDefMap = { .mMapFields = gReanimatorTransformDefFields, .mDefSize = sizeof(ReanimatorTransform), .mConstructorFunc = ReanimatorTransformConstructor };
 
-constinit DefField gReanimatorTrackDefFields[] = {
+constinit const DefField gReanimatorTrackDefFields[] = {
     { .mFieldName = "name", .mFieldOffset = offsetof(ReanimatorTrack,mName), .mFieldType = DefFieldType::DT_STRING, .mExtraData = nullptr },
     { .mFieldName = "t", .mFieldOffset = offsetof(ReanimatorTrack,mTransforms), .mFieldType = DefFieldType::DT_ARRAY, .mExtraData = &gReanimatorTransformDefMap },
     { .mFieldName = "", .mFieldOffset = 0x0, .mFieldType = DefFieldType::DT_INVALID, .mExtraData = nullptr }
 };
-constinit DefMap gReanimatorTrackDefMap = { .mMapFields = gReanimatorTrackDefFields, .mDefSize = sizeof(ReanimatorTrack), .mConstructorFunc = ReanimatorTrackConstructor };
+constinit const DefMap gReanimatorTrackDefMap = { .mMapFields = gReanimatorTrackDefFields, .mDefSize = sizeof(ReanimatorTrack), .mConstructorFunc = ReanimatorTrackConstructor };
 
-constinit DefField gReanimatorDefFields[] = {
+constinit const DefField gReanimatorDefFields[] = {
     { .mFieldName = "track", .mFieldOffset = offsetof(ReanimatorDefinition,mTracks), .mFieldType = DefFieldType::DT_ARRAY, .mExtraData = &gReanimatorTrackDefMap },
     { .mFieldName = "fps", .mFieldOffset = offsetof(ReanimatorDefinition,mFPS), .mFieldType = DefFieldType::DT_FLOAT, .mExtraData = nullptr },
     { .mFieldName = "", .mFieldOffset = 0x0, .mFieldType = DefFieldType::DT_INVALID, .mExtraData = nullptr }
 };
-constinit DefMap gReanimatorDefMap = { .mMapFields = gReanimatorDefFields, .mDefSize = sizeof(ReanimatorDefinition), .mConstructorFunc = ReanimatorDefinitionConstructor };
+constinit const DefMap gReanimatorDefMap = { .mMapFields = gReanimatorDefFields, .mDefSize = sizeof(ReanimatorDefinition), .mConstructorFunc = ReanimatorDefinitionConstructor };
 
-constinit static DefLoadResPath gDefLoadResPaths[4] = { { .mPrefix = "IMAGE_", .mDirectory = "" }, { .mPrefix = "IMAGE_", .mDirectory = "particles/" }, { .mPrefix = "IMAGE_REANIM_", .mDirectory = "reanim/" }, { .mPrefix = "IMAGE_REANIM_", .mDirectory = "images/" } };
+constinit const static DefLoadResPath gDefLoadResPaths[4] = { { .mPrefix = "IMAGE_", .mDirectory = "" }, { .mPrefix = "IMAGE_", .mDirectory = "particles/" }, { .mPrefix = "IMAGE_REANIM_", .mDirectory = "reanim/" }, { .mPrefix = "IMAGE_REANIM_", .mDirectory = "images/" } };
 
 void* ParticleFieldConstructor(void* thePointer)
 {
@@ -269,7 +269,7 @@ unsigned int DefGetSizeString(const char** theValue) {
     return strlen(*theValue) + sizeof(unsigned int);
 }
 
-unsigned int DefinitionGetArraySize(DefinitionArrayDef* theValue, DefMap* theDefMap) {
+unsigned int DefinitionGetArraySize(DefinitionArrayDef* theValue, const DefMap* theDefMap) {
     unsigned int aResult = theValue->mArrayCount * theDefMap->mDefSize + sizeof(unsigned int);
     for (int i = 0; theValue->mArrayCount > i; ++i) {
         aResult += DefinitionGetDeepSize(theDefMap, (void*)((intptr_t)theValue->mArrayData + i * theDefMap->mDefSize));
@@ -295,16 +295,16 @@ unsigned int DefGetSizeFont(_Font** theValue) {
     return aFontPath.length() + sizeof(unsigned int);
 }
 
-unsigned int DefinitionGetDeepSize(DefMap* theDefMap, void* theDefinition) {
+unsigned int DefinitionGetDeepSize(const DefMap* theDefMap, void* theDefinition) {
     unsigned int aResult = 0;
-    for (DefField* aField = theDefMap->mMapFields; *aField->mFieldName != '\0'; aField++) {
+    for (const DefField* aField = theDefMap->mMapFields; *aField->mFieldName != '\0'; aField++) {
         void* aDest = (void*)((intptr_t)theDefinition + aField->mFieldOffset);
         switch (aField->mFieldType) {
         case DefFieldType::DT_STRING:
             aResult += DefGetSizeString((const char**)aDest);
             break;
         case DefFieldType::DT_ARRAY:
-            aResult += DefinitionGetArraySize((DefinitionArrayDef*)aDest, (DefMap*)aField->mExtraData);
+            aResult += DefinitionGetArraySize((DefinitionArrayDef*)aDest, (const DefMap*)aField->mExtraData);
             break;
         case DefFieldType::DT_TRACK_FLOAT:
             aResult += DefGetSizeFloatTrack((FloatParameterTrack*)aDest);
@@ -323,7 +323,7 @@ unsigned int DefinitionGetDeepSize(DefMap* theDefMap, void* theDefinition) {
     return aResult;
 }
 
-unsigned int DefinitionGetSize(DefMap* theDefMap, void* theDefinition) {
+unsigned int DefinitionGetSize(const DefMap* theDefMap, void* theDefinition) {
     return theDefMap->mDefSize + DefinitionGetDeepSize(theDefMap, theDefinition);
 }
 
@@ -379,12 +379,12 @@ bool DefinitionLoadFont(_Font** theFont, const std::string& theName)
     return aFont != nullptr;
 }
 
-bool DefinitionLoadXML(const std::string& theFileName, DefMap* theDefMap, void* theDefinition)
+bool DefinitionLoadXML(const std::string& theFileName, const DefMap* theDefMap, void* theDefinition)
 {
     return DefinitionCompileAndLoad(theFileName, theDefMap, theDefinition);
 }
 
-inline bool DefReadFromCacheArray(void*& theReadPtr, DefinitionArrayDef* theArray, DefMap* theDefMap)
+inline bool DefReadFromCacheArray(void*& theReadPtr, DefinitionArrayDef* theArray, const DefMap* theDefMap)
 {
     int aDefSize;
     SMemR(theReadPtr, &aDefSize, sizeof(int));  // 先读取一个整数表示 theDefMap 描述的定义结构类的大小
@@ -460,10 +460,10 @@ inline bool DefReadFromCacheFont(void*& theReadPtr, _Font** theFont)
     return aFontName[0] == '\0' || DefinitionLoadFont(theFont, aFontName);
 }
 
-bool DefMapReadFromCache(void*& theReadPtr, DefMap* theDefMap, void* theDefinition)
+bool DefMapReadFromCache(void*& theReadPtr, const DefMap* theDefMap, void* theDefinition)
 {
     // 分别确认每一个成员变量，并修复其中的指针类型和标志类型的变量
-    for (DefField* aField = theDefMap->mMapFields; *aField->mFieldName != '\0'; aField++)
+    for (const DefField* aField = theDefMap->mMapFields; *aField->mFieldName != '\0'; aField++)
     {
         bool aSucceed = true;
         void* aDest = (void*)((intptr_t)theDefinition + aField->mFieldOffset);  // 指向该成员变量的指针
@@ -473,7 +473,7 @@ bool DefMapReadFromCache(void*& theReadPtr, DefMap* theDefMap, void* theDefiniti
             aSucceed = DefReadFromCacheString(theReadPtr, (const char**)aDest);
             break;
         case DefFieldType::DT_ARRAY:
-            aSucceed = DefReadFromCacheArray(theReadPtr, (DefinitionArrayDef*)aDest, (DefMap*)aField->mExtraData);
+            aSucceed = DefReadFromCacheArray(theReadPtr, (DefinitionArrayDef*)aDest, (const DefMap*)aField->mExtraData);
             break;
         case DefFieldType::DT_IMAGE:
             aSucceed = DefReadFromCacheImage(theReadPtr, (Image**)aDest);
@@ -494,7 +494,7 @@ bool DefMapReadFromCache(void*& theReadPtr, DefMap* theDefMap, void* theDefiniti
     return true;
 }
 
-uint DefinitionCalcHashSymbolMap(int aSchemaHash, DefSymbol* theSymbolMap)
+uint DefinitionCalcHashSymbolMap(int aSchemaHash, const DefSymbol* theSymbolMap)
 {
     while (theSymbolMap->mSymbolName != nullptr)
     {
@@ -505,15 +505,15 @@ uint DefinitionCalcHashSymbolMap(int aSchemaHash, DefSymbol* theSymbolMap)
     return aSchemaHash;
 }
 
-uint DefinitionCalcHashDefMap(int aSchemaHash, DefMap* theDefMap, TodList<DefMap*>& theProgressMaps)
+uint DefinitionCalcHashDefMap(int aSchemaHash, const DefMap* theDefMap, TodList<const DefMap*>& theProgressMaps)
 {
-    for (TodListNode<DefMap*>* aNode = theProgressMaps.mHead; aNode != nullptr; aNode = aNode->mNext)
+    for (TodListNode<const DefMap*>* aNode = theProgressMaps.mHead; aNode != nullptr; aNode = aNode->mNext)
         if (aNode->mValue == theDefMap)
             return aSchemaHash;
     theProgressMaps.AddTail(theDefMap);
 
     aSchemaHash = crc32(aSchemaHash, (Bytef*)&theDefMap->mDefSize, sizeof(int));
-    for (DefField* aField = theDefMap->mMapFields; *aField->mFieldName != '\0'; aField++)
+    for (const DefField* aField = theDefMap->mMapFields; *aField->mFieldName != '\0'; aField++)
     {
         aSchemaHash = crc32(aSchemaHash, (Bytef*)&aField->mFieldType, sizeof(DefFieldType));
         aSchemaHash = crc32(aSchemaHash, (Bytef*)&aField->mFieldOffset, sizeof(int));
@@ -521,10 +521,10 @@ uint DefinitionCalcHashDefMap(int aSchemaHash, DefMap* theDefMap, TodList<DefMap
         {
         case DefFieldType::DT_ENUM:
         case DefFieldType::DT_FLAGS:
-            aSchemaHash = DefinitionCalcHashSymbolMap(aSchemaHash, (DefSymbol*)aField->mExtraData);
+            aSchemaHash = DefinitionCalcHashSymbolMap(aSchemaHash, (const DefSymbol*)aField->mExtraData);
             break;
         case DefFieldType::DT_ARRAY:
-            aSchemaHash = DefinitionCalcHashDefMap(aSchemaHash, (DefMap*)aField->mExtraData, theProgressMaps);
+            aSchemaHash = DefinitionCalcHashDefMap(aSchemaHash, (const DefMap*)aField->mExtraData, theProgressMaps);
             break;
         default:
             break;
@@ -533,10 +533,10 @@ uint DefinitionCalcHashDefMap(int aSchemaHash, DefMap* theDefMap, TodList<DefMap
     return aSchemaHash;
 }
 
-uint DefinitionCalcHash(DefMap* theDefMap)
+uint DefinitionCalcHash(const DefMap* theDefMap)
 {
     // Uninitialised!!
-    TodList<DefMap*> aProgressMaps = TodList<DefMap*>();
+    TodList<const DefMap*> aProgressMaps = TodList<const DefMap*>();
     uint aResult = DefinitionCalcHashDefMap(crc32(0L, (Bytef*)Z_NULL, 0) + 1, theDefMap, aProgressMaps);
 
     // TodList destructor is called upon it going out of scope.
@@ -591,7 +591,7 @@ static bool DefinitionGetFileModTime(const std::string& theFilePath, std::filesy
 }
 
 // (void* def, *defMap, eax = string& compiledFilePath)  //esp -= 8
-bool DefinitionReadCompiledFile(const std::string& theCompiledFilePath, DefMap* theDefMap, void* theDefinition)
+bool DefinitionReadCompiledFile(const std::string& theCompiledFilePath, const DefMap* theDefMap, void* theDefinition)
 {
     PerfTimer aTimer;
     aTimer.Start();
@@ -687,10 +687,10 @@ bool DefinitionIsCompiled(const std::string& theXMLFilePath)
     return aXMLFileTime <= aCompiledFileTime;
 }
 
-void DefinitionFillWithDefaults(DefMap* theDefMap, void* theDefinition)
+void DefinitionFillWithDefaults(const DefMap* theDefMap, void* theDefinition)
 {
     memset(theDefinition, 0, theDefMap->mDefSize);  // 将 theDefinition 初始化填充为 0
-    for (DefField* aField = theDefMap->mMapFields; *aField->mFieldName != '\0'; aField++)  // 遍历 theDefinition 的每一个成员变量
+    for (const DefField* aField = theDefMap->mMapFields; *aField->mFieldName != '\0'; aField++)  // 遍历 theDefinition 的每一个成员变量
         if (aField->mFieldType == DefFieldType::DT_STRING)
             *(const char**)((uintptr_t)theDefinition + aField->mFieldOffset) = "";  // 将所有 const char* 类型的成员变量赋值为空字符串的指针
 }
@@ -738,7 +738,7 @@ bool DefinitionReadXMLString(XMLParser* theXmlParser, std::string& theValue)
     return true;
 }
 
-bool DefSymbolValueFromString(DefSymbol* theSymbolMap, const char* theName, int* theResultValue)
+bool DefSymbolValueFromString(const DefSymbol* theSymbolMap, const char* theName, int* theResultValue)
 {
     while (theSymbolMap->mSymbolName != nullptr)
     {
@@ -797,7 +797,7 @@ bool DefinitionReadStringField(XMLParser* theXmlParser, const char** theValue)
     return true;
 }
 
-bool DefinitionReadEnumField(XMLParser* theXmlParser, int* theValue, DefSymbol* theSymbolMap)
+bool DefinitionReadEnumField(XMLParser* theXmlParser, int* theValue, const DefSymbol* theSymbolMap)
 {
     std::string aStringValue;
     if (!DefinitionReadXMLString(theXmlParser, aStringValue))
@@ -823,9 +823,9 @@ bool DefinitionReadVector2Field(XMLParser* theXmlParser, SexyVector2* theValue)
     return false;
 }
 
-bool DefinitionReadArrayField(XMLParser* theXmlParser, DefinitionArrayDef* theArray, DefField* theField)
+bool DefinitionReadArrayField(XMLParser* theXmlParser, DefinitionArrayDef* theArray, const DefField* theField)
 {
-    DefMap* aDefMap = (DefMap*)theField->mExtraData;
+    const DefMap* aDefMap = (const DefMap*)theField->mExtraData;
 
     if (theArray->mArrayCount == 0)
     {
@@ -881,7 +881,7 @@ const TodCurveStringMap TodCurveStrings[] = {
 };
 */
 
-constinit DefSymbol gDefTrackEaseSymbols[] = {
+constinit const DefSymbol gDefTrackEaseSymbols[] = {
     {TodCurves::CURVE_EASE_IN_OUT_WEAK,   "EaseInOutWeak"},
     {TodCurves::CURVE_FAST_IN_OUT_WEAK,   "FastInOutWeak"},
     {TodCurves::CURVE_EASE_IN_OUT,        "EaseInOut"},
@@ -1049,7 +1049,7 @@ bool DefinitionReadFloatTrackField(XMLParser* theXmlParser, FloatParameterTrack*
     return true;
 }
 
-bool DefinitionReadFlagField(XMLParser* theXmlParser, const std::string& theElementName, uint* theResultValue, DefSymbol* theSymbolMap)
+bool DefinitionReadFlagField(XMLParser* theXmlParser, const std::string& theElementName, uint* theResultValue, const DefSymbol* theSymbolMap)
 {
     int aValue;
     if (!DefSymbolValueFromString(theSymbolMap, theElementName.c_str(), &aValue))
@@ -1113,7 +1113,7 @@ bool DefinitionReadFontField(XMLParser* theXmlParser, _Font** theFont)
     return false;
 }
 
-bool DefinitionReadField(XMLParser* theXmlParser, DefMap* theDefMap, void* theDefinition, bool* theDone)
+bool DefinitionReadField(XMLParser* theXmlParser, const DefMap* theDefMap, void* theDefinition, bool* theDone)
 {
     if (theXmlParser->HasFailed())
         return false;
@@ -1130,11 +1130,11 @@ bool DefinitionReadField(XMLParser* theXmlParser, DefMap* theDefMap, void* theDe
         return false;
     }
 
-    for (DefField* aField = theDefMap->mMapFields; *aField->mFieldName != '\0'; aField++)
+    for (const DefField* aField = theDefMap->mMapFields; *aField->mFieldName != '\0'; aField++)
     {
         void* pVar = (void*)((uintptr_t)theDefinition + aField->mFieldOffset);
         // Missing pvar field for some reason!
-        if (aField->mFieldType == DefFieldType::DT_FLAGS && DefinitionReadFlagField(theXmlParser, aXMLElement.mValue, (uint*)pVar, (DefSymbol*)aField->mExtraData))
+        if (aField->mFieldType == DefFieldType::DT_FLAGS && DefinitionReadFlagField(theXmlParser, aXMLElement.mValue, (uint*)pVar, (const DefSymbol*)aField->mExtraData))
             return true;
         
         if (strcasecmp(aXMLElement.mValue.c_str(), aField->mFieldName) == 0)  // 判断 aXMLElement 定义的是否为该成员变量
@@ -1152,7 +1152,7 @@ bool DefinitionReadField(XMLParser* theXmlParser, DefMap* theDefMap, void* theDe
                 aSuccess = DefinitionReadStringField(theXmlParser, (const char**)pVar);
                 break;
             case DefFieldType::DT_ENUM:
-                aSuccess = DefinitionReadEnumField(theXmlParser, (int*)pVar, (DefSymbol*)aField->mExtraData);
+                aSuccess = DefinitionReadEnumField(theXmlParser, (int*)pVar, (const DefSymbol*)aField->mExtraData);
                 break;
             case DefFieldType::DT_VECTOR2:
                 aSuccess = DefinitionReadVector2Field(theXmlParser, (SexyVector2*)pVar);
@@ -1185,7 +1185,7 @@ bool DefinitionReadField(XMLParser* theXmlParser, DefMap* theDefMap, void* theDe
     return false;
 }
 
-bool DefinitionLoadMap(XMLParser* theXmlParser, DefMap* theDefMap, void* theDefinition)
+bool DefinitionLoadMap(XMLParser* theXmlParser, const DefMap* theDefMap, void* theDefinition)
 {
     if (theDefMap->mConstructorFunc)
         theDefMap->mConstructorFunc(theDefinition);  // 利用构造函数构造 theDefinition
@@ -1207,7 +1207,7 @@ void DefWriteToCacheString(void*& theWritePtr, const char** theValue) {
         SMemW(theWritePtr, *theValue, aStringSize);
 }
 
-void DefWriteToCacheArray(void*& theWritePtr, DefinitionArrayDef* theValue, DefMap* theDefMap) {
+void DefWriteToCacheArray(void*& theWritePtr, DefinitionArrayDef* theValue, const DefMap* theDefMap) {
 	SMemW(theWritePtr, &theDefMap->mDefSize, sizeof(unsigned int));
 	SMemW(theWritePtr, theValue->mArrayData, theDefMap->mDefSize * theValue->mArrayCount);
 	for (int i = 0; i < theValue->mArrayCount; ++i)
@@ -1243,15 +1243,15 @@ void DefWriteToCacheFont(void*& theWritePtr, _Font** theValue) {
         SMemW(theWritePtr, aFontName.c_str(), aFontSize);
 }
 
-void DefMapWriteToCache(void*& theWritePtr, DefMap* theDefMap, void* theDefinition) {
-	for (DefField* aField = theDefMap->mMapFields; *aField->mFieldName != '\0'; aField++) {
+void DefMapWriteToCache(void*& theWritePtr, const DefMap* theDefMap, void* theDefinition) {
+	for (const DefField* aField = theDefMap->mMapFields; *aField->mFieldName != '\0'; aField++) {
 		void* aDest = (void*)((intptr_t)theDefinition + aField->mFieldOffset);
 		switch (aField->mFieldType) {
 		case DefFieldType::DT_STRING:
 			DefWriteToCacheString(theWritePtr, (const char**)aDest);
 			break;
 		case DefFieldType::DT_ARRAY:
-			DefWriteToCacheArray(theWritePtr, (DefinitionArrayDef*)aDest, (DefMap*)aField->mExtraData);
+			DefWriteToCacheArray(theWritePtr, (DefinitionArrayDef*)aDest, (const DefMap*)aField->mExtraData);
 			break;
 		case DefFieldType::DT_TRACK_FLOAT:
 			DefWriteToCacheFloatTrack(theWritePtr, (FloatParameterTrack*)aDest);
@@ -1278,7 +1278,7 @@ void* DefinitionCompressCompiledBuffer(void* theBuffer, unsigned int theBufferSi
     return aCompressedBuffer;
 }
 
-bool DefinitionWriteCompiledFile(const std::string& theCompiledFilePath, DefMap* theDefMap, void* theDefinition) {
+bool DefinitionWriteCompiledFile(const std::string& theCompiledFilePath, const DefMap* theDefMap, void* theDefinition) {
     unsigned int aCompressedSize = 0;
     unsigned int aDefSize = DefinitionGetSize(theDefMap, theDefinition) + sizeof(unsigned int);
     std::vector<char> aDefBasePtr(aDefSize);
@@ -1304,7 +1304,7 @@ bool DefinitionWriteCompiledFile(const std::string& theCompiledFilePath, DefMap*
     return false;
 }
 
-bool DefinitionCompileFile(const std::string theXMLFilePath, const std::string& theCompiledFilePath, DefMap* theDefMap, void* theDefinition)
+bool DefinitionCompileFile(const std::string theXMLFilePath, const std::string& theCompiledFilePath, const DefMap* theDefMap, void* theDefinition)
 {
     XMLParser aXMLParser = XMLParser();
     if (!aXMLParser.OpenFile(theXMLFilePath))
@@ -1319,7 +1319,7 @@ bool DefinitionCompileFile(const std::string theXMLFilePath, const std::string& 
 }
 
 // (void* def, *defMap, string& xmlFilePath)  //esp -= 0xC
-bool DefinitionCompileAndLoad(const std::string& theXMLFilePath, DefMap* theDefMap, void* theDefinition)
+bool DefinitionCompileAndLoad(const std::string& theXMLFilePath, const DefMap* theDefMap, void* theDefinition)
 {
 #ifdef PVZ_DEBUG
     const bool aRequireCompiledUpToDate = true;
@@ -1411,7 +1411,7 @@ float FloatTrackEvaluateFromLastTime(FloatParameterTrack& theTrack, float theTim
     return theTimeValue < 0.0f ? 0.0f : FloatTrackEvaluate(theTrack, theTimeValue, theInterp);
 }
 
-void DefinitionFreeArrayField(DefinitionArrayDef* theArray, DefMap* theDefMap)
+void DefinitionFreeArrayField(DefinitionArrayDef* theArray, const DefMap* theDefMap)
 {
     for (int i = 0; i < theArray->mArrayCount; i++)
         DefinitionFreeMap(theDefMap, (void*)((intptr_t)theArray->mArrayData + theDefMap->mDefSize * i));  // 最后一个参数表示 pData[i]
@@ -1419,10 +1419,10 @@ void DefinitionFreeArrayField(DefinitionArrayDef* theArray, DefMap* theDefMap)
     theArray->mArrayData = nullptr;
 }
 
-void DefinitionFreeMap(DefMap* theDefMap, void* theDefinition)
+void DefinitionFreeMap(const DefMap* theDefMap, void* theDefinition)
 {
     // 根据 theDefMap 遍历 theDefinition 的每个成员变量
-    for (DefField* aField = theDefMap->mMapFields; *aField->mFieldName != '\0'; aField++)
+    for (const DefField* aField = theDefMap->mMapFields; *aField->mFieldName != '\0'; aField++)
     {
         void* aVar = (void*)((intptr_t)theDefinition + aField->mFieldOffset);  // 指向该成员变量的指针
         switch (aField->mFieldType)
@@ -1434,7 +1434,7 @@ void DefinitionFreeMap(DefMap* theDefMap, void* theDefinition)
             *(const char**)aVar = nullptr;
             break;
         case DefFieldType::DT_ARRAY:
-            DefinitionFreeArrayField((DefinitionArrayDef*)aVar, (DefMap*)aField->mExtraData);
+            DefinitionFreeArrayField((DefinitionArrayDef*)aVar, (const DefMap*)aField->mExtraData);
             break;
         case DefFieldType::DT_TRACK_FLOAT:
             if (((FloatParameterTrack*)aVar)->mCountNodes != 0)
