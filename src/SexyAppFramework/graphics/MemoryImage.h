@@ -105,7 +105,8 @@ public:
 public:
 	MemoryImage();
 	MemoryImage(SexyAppBase* theApp);
-	MemoryImage(const MemoryImage& theMemoryImage);	
+	MemoryImage(const MemoryImage& theMemoryImage) = delete;
+	MemoryImage& operator=(const MemoryImage& theMemoryImage) = delete;
 	virtual ~MemoryImage();
 
 	virtual void			Clear();
