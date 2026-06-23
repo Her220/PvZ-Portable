@@ -22,9 +22,10 @@
             android:exported="true"
             android:hardwareAccelerated="true"
             android:launchMode="singleInstance"
-            android:screenOrientation="userLandscape">
+            android:screenOrientation="userLandscape"
+            android:resizeableActivity="false">
 
-            android:resizeableActivity="false"
+
             
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
