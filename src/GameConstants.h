@@ -41,6 +41,13 @@ constexpr const int HIGH_GROUND_HEIGHT = 30;
 constexpr const int SEEDBANK_MAX = 10;
 constexpr const int SEED_BANK_OFFSET_X = 133;        // 6. Mueve la barra de semillas a la derecha para que quede alineada con el patio centrado
 
+constexpr const int SEED_BANK_OFFSET_X_END = 10;
+constexpr const int SEED_CHOOSER_OFFSET_Y = 516;
+constexpr const int SEED_PACKET_WIDTH = 50;
+constexpr const int SEED_PACKET_HEIGHT = 70;
+constexpr const int IMITATER_DIALOG_WIDTH = 500;
+constexpr const int IMITATER_DIALOG_HEIGHT = 600;
+
 // ============================================================
 // About levels
 // ============================================================
