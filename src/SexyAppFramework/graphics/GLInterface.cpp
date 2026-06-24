@@ -1121,31 +1121,31 @@ GLImage* GLInterface::GetScreenImage() { return mScreenImage; }
 
 void GLInterface::UpdateViewport()
 {
-	int vx = 0, vy = 0, vw, vh;
+    int vx = 0, vy = 0, vw, vh;
 
 #ifdef __SWITCH__
-	int width = 1280, height = 720;
+    int width = 1280, height = 720;
 #else
-	int width, height;
-	SDL_GL_GetDrawableSize((SDL_Window*)mApp->mWindow, &width, &height);
+    int width, height;
+    SDL_GL_GetDrawableSize((SDL_Window*)mApp->mWindow, &width, &height);
 #endif
 
-	vw = width; vh = height;
+    vw = width; vh = height;
 
-	// Letterbox to 4:3
-	if (width * 3 > height * 4)
-	{
-		vw = height * 4 / 3;
-		vx = (width - vw) / 2;
-	}
-	else if (width * 3 < height * 4)
-	{
-		vh = width * 3 / 4;
-		vy = (height - vh) / 2;
-	}
+    // Letterbox to 16:9
+    if (width * 9 > height * 16)
+    {
+        vw = height * 16 / 9;
+        vx = (width - vw) / 2;
+    }
+    else if (width * 9 < height * 16)
+    {
+        vh = width * 9 / 16;
+        vy = (height - vh) / 2;
+    }
 
-	glViewport(vx, vy, vw, vh);
-	mPresentationRect = Rect(vx, vy, vw, vh);
+    glViewport(vx, vy, vw, vh);
+    mPresentationRect = Rect(vx, vy, vw, vh);
 }
 
 int GLInterface::Init(bool IsWindowed)
