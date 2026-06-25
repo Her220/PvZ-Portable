@@ -1132,15 +1132,15 @@ void GLInterface::UpdateViewport()
 
     vw = width; vh = height;
 
-    // Letterbox to 16:9
-    if (width * 9 > height * 16)
+    // Letterbox cambiado a 19.5:9 (usando la relación entera 39:18)
+    if (width * 18 > height * 39)
     {
-        vw = height * 16 / 9;
+        vw = height * 39 / 18;
         vx = (width - vw) / 2;
     }
-    else if (width * 9 < height * 16)
+    else if (width * 18 < height * 39)
     {
-        vh = width * 9 / 16;
+        vh = width * 18 / 39;
         vy = (height - vh) / 2;
     }
 
