@@ -27,18 +27,18 @@ constexpr const double PI = 3.141592653589793;
 // ============================================================
 // Constants
 // ============================================================
-constexpr const int BOARD_WIDTH = 800;               // 1. Regresa la UI a su ancho original (4:3) para que no se estire
+constexpr const int BOARD_WIDTH = 800;             
 constexpr const int BOARD_HEIGHT = 600;
-constexpr const int WIDE_BOARD_WIDTH = 1067;         // 2. Mantiene el patio extendido en pantallas anchas
-constexpr const int BOARD_OFFSET = 0;              // 3. ¡Clave! Centra el tablero 4:3 dentro de los 1067 píxeles ((1067-800)/2)
-constexpr const int BOARD_EDGE = -100;              // 4. Ajusta el límite izquierdo para los zombis que entran
-constexpr const int BOARD_IMAGE_WIDTH_OFFSET = 1400; // 5. Ajusta el ancho de la imagen de fondo
+constexpr const int WIDE_BOARD_WIDTH = 1067;         
+constexpr const int BOARD_OFFSET = 133;             
+constexpr const int BOARD_EDGE = -100;              
+constexpr const int BOARD_IMAGE_WIDTH_OFFSET = 1400; 
 constexpr const int BOARD_ICE_START = 800;
 constexpr const int LAWN_XMIN = 40;
 constexpr const int LAWN_YMIN = 80;
 constexpr const int HIGH_GROUND_HEIGHT = 30;
 constexpr const int SEEDBANK_MAX = 10;
-constexpr const int SEED_BANK_OFFSET_X = 0;        // 6. Mueve la barra de semillas a la derecha para que quede alineada con el patio centrado
+constexpr const int SEED_BANK_OFFSET_X = 0;        
 constexpr const int SEED_BANK_OFFSET_X_END = 10;
 
 constexpr const int SEED_CHOOSER_OFFSET_Y = 516;
